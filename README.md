@@ -10,12 +10,12 @@ Exploring features of Python's asyncio
 
 - Submit periodically up to 20 jobs for a fictive batch system (each 2 seconds)
 - Check status of submitted jobs periodically, each 15 seconds
-- Finish when all fictive jobs have terminated
+- Finish when all fictive jobs have terminated and print a turn-around statistics of all jobs as table in a .csv format
 
 - Long lasting commands are simulated by a sleep command or by a call to asyncio.sleep() with a random duration
 - Use producer/consumer design pattern with 3 queues
 - Periodic tasks are implemted by loops adding a request to the asyncio.Queue and sleeping for a fix duration
-- Consumers process the submits or status checks
+- Consumers process the submits and status checks
   
 
 ## Related Asyncio Tutorials
