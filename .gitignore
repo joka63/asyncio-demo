@@ -2,3 +2,6 @@
 .idea
 rp_*.py
 data
+__pycache__/
+*.pyc
+*.pyo
