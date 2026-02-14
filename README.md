@@ -16,6 +16,29 @@ Exploring features of Python's asyncio
 - Use producer/consumer design pattern with 3 queues
 - Periodic tasks are implemted by loops adding a request to the asyncio.Queue and sleeping for a fix duration
 - Consumers process the submits and status checks
+
+### file_crc64
+
+CRC64 checksum calculation with optimized file I/O:
+
+- Pure Python CRC64 implementation (ECMA-182 polynomial)
+- Standard variant using `read()` method
+- Optimized variant using `readinto()` to avoid memory allocations
+- Async support with aiofiles and threading
+- Built-in benchmark to compare performance
+
+```bash
+# Calculate checksum
+python -m examples file_crc64 /path/to/file
+
+# Use optimized readinto variant
+python -m examples file_crc64 /path/to/file --readinto
+
+# Run benchmark
+python -m examples file_crc64 /path/to/file --bench -n 5
+```
+
+See [examples/file_checksum/README.md](examples/file_checksum/README.md) for detailed documentation.
   
 
 ## Related Asyncio Tutorials

@@ -16,6 +16,29 @@ Funktionen von Pythons asyncio erkunden
 - Verwendung eines Producer/Consumer-Designmusters mit 3 Warteschlangen
 - Periodische Aufgaben werden durch Schleifen in zwei Producern implementiert, die jeweils eine Anfrage zur asyncio.Queue hinzufügen und dann für eine feste Dauer schlafen.
 - Consumer verarbeiten die Job-Submits oder Job-Statusprüfungen
+
+### file_crc64
+
+CRC64-Prüfsummenberechnung mit optimierter Datei-I/O:
+
+- Pure Python CRC64-Implementierung (ECMA-182 Polynom)
+- Standardvariante mit `read()`-Methode
+- Optimierte Variante mit `readinto()` zur Vermeidung von Speicherallokationen
+- Async-Unterstützung mit aiofiles und Threading
+- Integrierter Benchmark zum Vergleichen der Leistung
+
+```bash
+# Prüfsumme berechnen
+python -m examples file_crc64 /pfad/zur/datei
+
+# Optimierte readinto-Variante verwenden
+python -m examples file_crc64 /pfad/zur/datei --readinto
+
+# Benchmark ausführen
+python -m examples file_crc64 /pfad/zur/datei --bench -n 5
+```
+
+Siehe [examples/file_checksum/README.md](examples/file_checksum/README.md) für detaillierte Dokumentation.
  
 
 ## Links zu Asyncio Tutorials
